@@ -5,11 +5,6 @@ large_n = 600_851_475_143
 
 # Find all potential numbers that could be factors
 factor_bound = (large_n**0.5).to_i
-# integers = (2..factor_bound).to_a
-
-# # Determine if integer is a factor
-# integers.reject!{|i| large_n % i != 0 }
-# puts factors.last
 
 # not prime if any factors other than 
 def prime?(integer)
@@ -26,10 +21,8 @@ end
 largest = 1
 current = 3
 while(current <= factor_bound)
-  if large_n % current == 0 # determine if factor is divisor
-    if prime?(current)
-      largest = current
-    end
+  if large_n % current == 0 && prime?(current) # determine if factor is divisor
+    largest = current
   end
   current += 2 # skip evens, not primes
 end
