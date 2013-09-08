@@ -4,16 +4,11 @@
 
 # largest 3 digit number squared is 999^2 = 998001, so largest palindrome must
 # be <= 997_799.
-# Naive: iterate downward, checking if any product is a palindrome .
+# Naive: iterate downward, checking if any product is a palindrome.
 # TODO would like to "side step downward", check 999*998, 997*999, but still
 # need to check all of the possibilites...
 
 def palindrome? val
-  # s = product.to_s
-  # return true if s.length == 1
-  # return true if s.length == 2 && s[0] == s[1]
-  # return false if s[0] != s[-1]
-  # palindrome?(s[1..-2])
   val.to_s == val.to_s.reverse
 end
 
